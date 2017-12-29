@@ -241,15 +241,17 @@ h1:nth-child(10){ transform:translateZ(45px); }
             $("#contact").val(contact);
             $("#name").val(name);
             $("#registerform").attr("action", "index.html?name="+$("#name").val());
-            $("#alsohellobar").html("<a href='whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 "+window.location+"'><img width='25px' height='25px' src='wtsp.svg' /><b style='font-size: 15px;'> Click Here to Share on Whatsapp</b> <img width='25px' height='25px' src='wtsp.svg'/></a>");
+            $("#alsohellobar").html("<button id='mywhatsapp' href='whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 "+window.location+"'><img width='25px' height='25px' src='wtsp.svg' /><b style='font-size: 15px;'> Click Here to Share on Whatsapp</b> <img width='25px' height='25px' src='wtsp.svg'/></button>");
             $("#formhellobar").css("display","none");
             $("#alsohellobar").css("display","block");
             return false;
           }
         }
       });
-      $("#alsohellobar").click(function(){
-        $("#registerform").submit()
+      $("#mywhatsapp").click(function(){
+        alert("ok")
+        $("#registerform").submit();
+        window.href("whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 ");
       });
     });
   </script>
