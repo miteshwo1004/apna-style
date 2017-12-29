@@ -248,11 +248,12 @@ h1:nth-child(10){ transform:translateZ(45px); }
           }
         }
       });
-      $("#mywhatsapp").click(function(){
-        alert("ok")
-        $("#registerform").submit();
-        window.href("whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 ");
-      });
+
+    });
+    $(document).on("click", "#mywhatsapp", function(){
+      alert("ok")
+      $("#registerform").submit();
+      window.href("whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 ");
     });
   </script>
 
