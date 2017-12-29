@@ -1,0 +1,61 @@
+body {
+  background: #de2f32;  margin: auto;border: 5px solid transparent;
+	border-image: linear-gradient(to top, #3acfd5 0%,#ffffff 25%, #3a4ed5 50%, #005928 75%, #fff 90%, #3acfd5 100%);
+	border-image-slice: 1;}
+
+
+.santa{width:70%; height:auto; display:block; margin:5px auto;}
+.tree{width:45%; display:inline-block; margin:5px auto auto 3%; border-bottom:3px solid white; border-radius:10%}
+.rock{animation:infinite 1s rock}
+@keyframes rock {  0% {    transform: rotate(-1deg);  }
+  50% {    transform: rotate(2deg);  }
+  100% {    transform: rotate(-1deg);  }}
+
+.main{display:block; max-width:600px; margin:5px auto;}
+hr{width:70%; margin:0px auto; border:solid 2px white;}
+p span{font-size: 18px; font-weight:900;
+    text-align: center;
+    color: blue;
+    text-shadow: 1px 1px white;
+    font-family: 'Indie Flower', cursive;
+    }
+p{font-weight:900; padding:2px; font-size: 18px;
+    text-align: center;
+     text-shadow: 1px 1px blue, -1px -1px blue;
+    font-family: 'Indie Flower', cursive;
+    color: white;}
+h2 {
+    font-size: 38px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px silver, -1px -1px silver;
+    animation: rock infinite 1s;
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: 2px;
+}
+h1{    font-size: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+text-shadow:1px 1px #14228a, -1px -1px #3028ad;    animation: rock infinite 1s;
+font-family: 'Berkshire Swash', cursive;}
+
+.footerbtn span {    font-size: 20px;    word-spacing: -6px;    color: rgba(255, 255, 255, 0.36);}
+a.footerbtn {  background: linear-gradient(149deg, green, #26a69a);  font-size: 40px;  color: whitesmoke; display: inline-block; border: navy solid 1px;    line-height: 0.8;    text-decoration: none;    text-shadow: 0px 1px white;    font-family: monospace;    border-radius: 5px;    padding: 0px 2px;}
+#fb span {    font-size: 20px; color: rgba(255, 255, 255, 0.33);  word-spacing: -6px; }
+a#fb {    font-size: 40px;!important    padding: 0px 2px;   background: linear-gradient(45deg, navy, blue);  color: whitesmoke;  display: inline-block;  border: navy solid 1px;  line-height: 0.8; text-decoration: none;  text-shadow: 0px 1px white;  font-family: monospace;  border-radius: 5px;}
+.footerbtn img, #fb img{width:40px; height:40px;}
+a#home {
+    background: linear-gradient(149deg,#1047e0, #2bd838);
+    font-size: 40px;  color: whitesmoke;
+    display: inline-block;
+    border: navy solid 1px;
+    line-height: 0.8;
+    text-decoration: none;
+    text-shadow: 0px 1px white;
+    font-family: monospace;
+    border-radius: 5px;
+    padding: 0px 2px;
+    width: 100%;
+    text-align: center;
+}
