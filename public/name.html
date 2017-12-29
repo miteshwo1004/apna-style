@@ -11,9 +11,10 @@
   <body>
     <script type="text/javascript">
       $(document).ready(function(){
+        $("#autoplay").attr("href", "whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 http://mera-style.com/index.html?name="+localStorage.getItem('name'));
         $('#autoplay').get(0).click();
       });
     </script>
-    <a id="autoplay" class="footerbt" href="whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 see-now.co"><img width="25px" height="25px" src="wtsp.svg"/><b style="font-size: 15px;"> Click Here to Share on Whatsapp</b> <img width="25px" height="25px" src="wtsp.svg"/></a>
+    <a id="autoplay" class="footerbt" href=""><img width="25px" height="25px" src="wtsp.svg"/><b style="font-size: 15px;"> Click Here to Share on Whatsapp</b> <img width="25px" height="25px" src="wtsp.svg"/></a>
   </body>
 </html>

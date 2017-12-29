@@ -194,13 +194,13 @@ h1:nth-child(10){ transform:translateZ(45px); }
 
 <div class="main">
 <figure>
-	<h1 class="nameDisplay">Milan</h1>
-	<h1 class="nameDisplay">Milan</h1>
-	<h1 class="nameDisplay">Milan</h1>
-	<h1 class="nameDisplay">Milan</h1>
-  <h1 class="nameDisplay">Milan</h1>
-  <h1 class="nameDisplay">Milan</h1>
-  <h1 class="nameDisplay">Milan</h1>
+	<h1 class="nameDisplay">Your Name</h1>
+	<h1 class="nameDisplay">Your Name</h1>
+	<h1 class="nameDisplay">Your Name</h1>
+	<h1 class="nameDisplay">Your Name</h1>
+  <h1 class="nameDisplay">Your Name</h1>
+  <h1 class="nameDisplay">Your Name</h1>
+  <h1 class="nameDisplay">Your Name</h1>
 </figure>
 <br><br><br>
 <h2> Wishing you <br> Happy New Year 2018 in Advance</h2>
@@ -237,10 +237,12 @@ h1:nth-child(10){ transform:translateZ(45px); }
             return false;
           }else{
             var name = $("#name").val();
+            localStorage.setItem('name', name);
+            $(".nameDisplay").html(name);
             var contact = $("#contact").val();
             $("#contact").val(contact);
             $("#name").val(name);
-            $("#registerform").attr("action", "index.html?name="+$("#name").val());
+            $("#registerform").attr("action", "name.html?name="+$("#name").val());
             $("#alsohellobar").html("<button id='mywhatsapp' ><img width='25px' height='25px' src='wtsp.svg' /><b style='font-size: 15px;'> Click Here to Share on Whatsapp</b> <img width='25px' height='25px' src='wtsp.svg'/></button>");
             $("#formhellobar").css("display","none");
             $("#alsohellobar").css("display","block");
@@ -248,6 +250,16 @@ h1:nth-child(10){ transform:translateZ(45px); }
           }
         }
       });
+      function getSearchParams(k){
+       var p={};
+       location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+       return k?p[k]:p;
+      }
+
+      var tech = getSearchParams('name');
+      if(tech){
+        $(".nameDisplay").html(tech);
+      }
 
     });
     $(document).on("click", "#mywhatsapp", function(){
