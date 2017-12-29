@@ -212,7 +212,7 @@ h1:nth-child(10){ transform:translateZ(45px); }
 <br><br>
   <div class="footerbt" id="hellobar">
     <div class="" id="formhellobar">
-      <form netlify name="contact" method="POST" id="registerform">
+      <form netlify action="name.html" name="contact" method="POST" id="registerform">
         <input type="text" id="contact" placeholder="Your Mobile Number" />&nbsp;
         <input type="text" id="name" placeholder="Your Name" /><br />
         <button class="button" id="go_click" type="submit" name="button">Go</button>
@@ -251,9 +251,7 @@ h1:nth-child(10){ transform:translateZ(45px); }
 
     });
     $(document).on("click", "#mywhatsapp", function(){
-      alert("ok")
       $("#registerform").submit();
-      window.href("whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 ");
     });
   </script>
 
