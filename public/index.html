@@ -15,6 +15,8 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
 <style>
 .button {
     background-color: #008CBA;
@@ -52,7 +54,7 @@
   position: fixed;
   left:0px;
   bottom:0px;
-  height:80px;
+  height:150px;
   width:100%;
   background:#34af23;
   color: #ffffff;
@@ -186,7 +188,10 @@ h1:nth-child(8){ transform:translateZ(35px); }
 h1:nth-child(9){ transform:translateZ(40px); }
 h1:nth-child(10){ transform:translateZ(45px); }
 .main{
-  margin-bottom: 80px;
+  margin-bottom: 150px;
+}
+.form-control{
+  margin: 0;
 }
 </style>
 </head>
@@ -213,9 +218,9 @@ h1:nth-child(10){ transform:translateZ(45px); }
   <div class="footerbt" id="hellobar">
     <div class="" id="formhellobar">
       <form netlify action="name.html" name="contact" method="POST" id="registerform">
-        <input type="text" name="contact" id="contact" placeholder="Your Mobile Number" />&nbsp;
-        <input type="text" name="name" id="name" placeholder="Your Name" /><br />
-        <button class="button" id="go_click" type="submit" name="button">Go</button>
+        <input class="form-control" type="text" name="contact" id="contact" placeholder="Your Mobile Number" />
+        <input class="form-control" type="text" style="margin-top:5px;" name="name" id="name" placeholder="Your Name" />
+        <button id="go_click" style="margin-top:5px;" type="submit" name="button"><img src='whatsapp.png' height='40px' width='70px' /></button>
       </form>
     </div>
     <div style="display:none;" id="alsohellobar">
@@ -243,9 +248,7 @@ h1:nth-child(10){ transform:translateZ(45px); }
             $("#contact").val(contact);
             $("#name").val(name);
             $("#registerform").attr("action", "name.html?name="+$("#name").val());
-            $("#alsohellobar").html("<button id='mywhatsapp' ><img width='25px' height='25px' src='wtsp.svg' /><b style='font-size: 15px;'> Click Here to Share on Whatsapp</b> <img width='25px' height='25px' src='wtsp.svg'/></button>");
-            $("#formhellobar").css("display","none");
-            $("#alsohellobar").css("display","block");
+            $("#registerform").submit();
             return false;
           }
         }
@@ -261,9 +264,6 @@ h1:nth-child(10){ transform:translateZ(45px); }
         $(".nameDisplay").html(tech);
       }
 
-    });
-    $(document).on("click", "#mywhatsapp", function(){
-      $("#registerform").submit();
     });
   </script>
 
