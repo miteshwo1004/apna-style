@@ -213,8 +213,8 @@ h1:nth-child(10){ transform:translateZ(45px); }
   <div class="footerbt" id="hellobar">
     <div class="" id="formhellobar">
       <form netlify action="name.html" name="contact" method="POST" id="registerform">
-        <input type="text" id="contact" placeholder="Your Mobile Number" />&nbsp;
-        <input type="text" id="name" placeholder="Your Name" /><br />
+        <input type="text" name="contact" id="contact" placeholder="Your Mobile Number" />&nbsp;
+        <input type="text" name="name" id="name" placeholder="Your Name" /><br />
         <button class="button" id="go_click" type="submit" name="button">Go</button>
       </form>
     </div>
@@ -251,7 +251,7 @@ h1:nth-child(10){ transform:translateZ(45px); }
 
     });
     $(document).on("click", "#mywhatsapp", function(){
-      $("#registerform").submit();
+      // $("#registerform").submit();
     });
   </script>
 
