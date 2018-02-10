@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script src="howler.js"></script>
 <style>
 @font-face {
@@ -229,36 +230,32 @@ h1:nth-child(10){ transform:translateZ(45px); }
 <div class="" id="prt">
   <img class="rock santa" src="shiva.png" />
   <img src="mydiya.png" id="diya" alt="" style="width:100px;height:120px;" class="ui-widget-content ui-draggable"/>
-  <script type="text/javascript">
-
-
-  $(document).ready(function() {
-
-
-  var howler_example = new Howl({
-  		src: ['shiv.mp3'],
-  		volume: 0.5
-  	});
-   var howler_examples = new Howl({
-  		src: ['shivji_damru.mp3'],
-  		volume: 0.5
-  	});
-    $('#prt img#diya').draggable({
-      cursor: 'move',
-      containment: 'parent'  ,
-  start: function(event, ui) {
-     howler_example.play();
-      },
-      stop: function(event, ui)
-      {
-        howler_example.pause();
-
-      }
-    });
-  });
-  </script>
 </div>
+<script type="text/javascript">
 
+
+$(document).ready(function() {
+var howler_example = new Howl({
+    src: ['shiv.mp3'],
+    volume: 0.5
+  });
+ var howler_examples = new Howl({
+    src: ['shivji_damru.mp3'],
+    volume: 0.5
+  });
+  $('#prt img#diya').draggable({
+    cursor: 'move',
+    containment: 'parent',
+    start: function(event, ui) {
+      console.log("start");
+      howler_example.play();
+    },
+    stop: function(event, ui){
+      howler_example.pause();
+    }
+  });
+});
+</script>
 <p><span style="font-size:22px;">ना पूछो मुझसे मेरी पहचान,
 मैं तो भस्मधारी हूँ,
 भस्म से होता जिनका श्रृंगार,
