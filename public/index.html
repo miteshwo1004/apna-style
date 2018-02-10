@@ -14,8 +14,11 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="howler.js"></script>
 <style>
 @font-face {
     font-family: myFirstFont;
@@ -223,68 +226,99 @@ h1:nth-child(10){ transform:translateZ(45px); }
   </figure>
   <br><br>
 <p><span style="font-size:28px;font-family:myFirstFont;">In Advance</span></p>
-<img class="rock santa" src="shiva.png">
+<div class="" id="prt">
+  <img class="rock santa" src="shiva.png" />
+  <img src="diwali-diya.gif" id="diya" alt="" style="width:100px;height:120px;" class="ui-widget-content ui-draggable"/>
+  <script type="text/javascript">
+
+
+  $(document).ready(function() {
+
+
+  var howler_example = new Howl({
+  		src: ['shiv.mp3'],
+  		volume: 0.5
+  	});
+   var howler_examples = new Howl({
+  		src: ['shivji_damru.mp3'],
+  		volume: 0.5
+  	});
+    $('#prt img#diya').draggable({
+      cursor: 'move',
+      containment: 'parent'  ,
+  start: function(event, ui) {
+     howler_example.play();
+      },
+      stop: function(event, ui)
+      {
+        howler_example.pause();
+
+      }
+    });
+  });
+  </script>
+</div>
+
 <p><span style="font-size:22px;">ना पूछो मुझसे मेरी पहचान,
 मैं तो भस्मधारी हूँ,
 भस्म से होता जिनका श्रृंगार,
 मैं उस महाकाल का पुजारी हूँ. <br>
 शुभ शिवरात्रि के बहुत बधाई...</span></p>
 <p><span>By: </span><span class="nameDisplay">Your Name</span></p>
-<!-- <img class="rock tree" src="https://www.festlovers.com/wp-content/uploads/2017/12/Very-Funny-Makar-Sankranti-Animated-Image.gif">
-<img class="rock tree" src="http://www.desiglitters.com/wp-content/uploads/7467/7467.gif"> -->
-<br><br>
-  <div class="footerbt" id="hellobar">
-    <div class="" id="formhellobar">
-      <form netlify action="name.html" name="contact" method="POST" id="registerform">
-        <input class="form-control" type="text" name="contact" id="contact" placeholder="Your Mobile Number" />
-        <input class="form-control" type="text" style="margin-top:5px;" name="name" id="name" placeholder="Your Name" />
-        <button id="go_click" style="margin-top:5px;" type="submit" name="button"><img src='whatsapp.png' height='40px' width='70px' /></button>
-      </form>
-    </div>
-    <div style="display:none;" id="alsohellobar">
+    <!-- <img class="rock tree" src="https://www.festlovers.com/wp-content/uploads/2017/12/Very-Funny-Makar-Sankranti-Animated-Image.gif">
+    <img class="rock tree" src="http://www.desiglitters.com/wp-content/uploads/7467/7467.gif"> -->
+    <br><br>
+    <div class="footerbt" id="hellobar">
+      <div class="" id="formhellobar">
+        <form netlify action="name.html" name="contact" method="POST" id="registerform">
+          <input class="form-control" type="text" name="contact" id="contact" placeholder="Your Mobile Number" />
+          <input class="form-control" type="text" style="margin-top:5px;" name="name" id="name" placeholder="Your Name" />
+          <button id="go_click" style="margin-top:5px;" type="submit" name="button"><img src='whatsapp.png' height='40px' width='70px' /></button>
+        </form>
+      </div>
+      <div style="display:none;" id="alsohellobar">
 
+      </div>
     </div>
-  </div>
-  <!-- <a class="footerbt" href="whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 see-now.co"><img width="25px" height="25px" src="wtsp.svg"/><b style="font-size: 15px;"> Click Here to Share on Whatsapp</b> <img width="25px" height="25px" src="wtsp.svg"/></a> -->
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#go_click").click(function(){
-        var mob = /^[7-9]{1}[0-9]{9}$/;
-        if ( mob.test($.trim($("#contact").val())) == false ){
-          alert("Your mobile number not valid");
-          $("#contact").focus();
-          return false;
-        }else{
-          if( $("#name").val() == "" ){
-            alert("Please enter name")
+    <!-- <a class="footerbt" href="whatsapp://send?text=Touch this blue line and enter your name you will see the magic %0A👉 see-now.co"><img width="25px" height="25px" src="wtsp.svg"/><b style="font-size: 15px;"> Click Here to Share on Whatsapp</b> <img width="25px" height="25px" src="wtsp.svg"/></a> -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#go_click").click(function(){
+          var mob = /^[7-9]{1}[0-9]{9}$/;
+          if ( mob.test($.trim($("#contact").val())) == false ){
+            alert("Your mobile number not valid");
+            $("#contact").focus();
             return false;
           }else{
-            var name = $("#name").val();
-            localStorage.setItem('name', name);
-            $(".nameDisplay").html(name);
-            var contact = $("#contact").val();
-            $("#contact").val(contact);
-            $("#name").val(name);
-            $("#registerform").attr("action", "name.html?name="+$("#name").val());
-            $("#registerform").submit();
-            return false;
+            if( $("#name").val() == "" ){
+              alert("Please enter name")
+              return false;
+            }else{
+              var name = $("#name").val();
+              localStorage.setItem('name', name);
+              $(".nameDisplay").html(name);
+              var contact = $("#contact").val();
+              $("#contact").val(contact);
+              $("#name").val(name);
+              $("#registerform").attr("action", "name.html?name="+$("#name").val());
+              $("#registerform").submit();
+              return false;
+            }
           }
+        });
+        function getSearchParams(k){
+         var p={};
+         location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+         return k?p[k]:p;
         }
+
+        var tech = getSearchParams('name');
+        if(tech){
+          tech = tech.replace("-", " ");
+          $(".nameDisplay").html(tech);
+        }
+
       });
-      function getSearchParams(k){
-       var p={};
-       location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
-       return k?p[k]:p;
-      }
-
-      var tech = getSearchParams('name');
-      if(tech){
-        tech = tech.replace("-", " ");
-        $(".nameDisplay").html(tech);
-      }
-
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
