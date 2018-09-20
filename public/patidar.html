@@ -242,7 +242,7 @@
                <p><span style="font-size:25px;color: #ff6e00;font-family: 'Mukta', sans-serif;font-weight:bold;">- सरदार पटेल -</span></p>
 
                <p style="background-color: white;font-size:25px;color: red;font-family: 'Mukta', sans-serif;font-weight:bold;display:unset;">यह Msg सभी के मोबाइल में होना चाहिए यह आपका फर्ज हे।</p> <br>
-               <img src="good-job-smiley-emoticon.gif" alt="">
+               <img src="https://miteshwo1004.github.io/apna-style/public/good-job-smiley-emoticon.gif" alt="">
                <script type="text/javascript">
                   $(document).ready(function() {
                     var howler_example = new Howl({
@@ -273,14 +273,16 @@
                     if(tech){
                       tech2 = decodeURI(tech);
                       tech = tech2.replace("+", " ");
+                      tech = tech2.replace("-", " ");
                       offname = tech2.replace("+", " ");
-                      $(".nameDisplay").html(tech);
+                      offname = offname.replace("-", " ");
+                      $(".nameDisplay").html(offname);
                       // $("#hellobar").css('background-color',"green");
                       // $("#hellobar").html('<a style="color:white;" class="footerbtn" href="whatsapp://send?text=*'+tech+'* તરફ થી નવરાત્રી ની શુભકામના '+window.location+'?n='+tech+'  🇮🇳  *Touch This Blue line Enter Your name and See Magic*👉 *https://navratri.w1shes.com*"><img width="25px" height="25px" src="https://i.imgur.com/fcqTtzV.png">  <b class="hny-txt" style="font-size: 26px;">Share on Whatsapp</b>  <img width="25px" height="25px" src="https://i.imgur.com/fcqTtzV.png"></a>');
                     }
                     var tech1 = getSearchParams('sub');
                     if(tech1){
-                      tech = tech.replace(" ", "+");
+                      tech = offname.replace(" ", "-");
                       $("#hellobar").css('background-color',"green");
                       $("#hellobar").html('<a style="color:white;" class="footerbtn" href="whatsapp://send?text=*'+offname+'* Support *हार्दिक पटेल*   https://patidar.w1shes.com/?n='+tech+'  🇮🇳  *हार्दिक पटेल को Support करने के लिए यहाँ क्लिक करे *👉 *https://patidar.w1shes.com* %0A જય સરદાર જય પાટીદાર"><img width="25px" height="25px" src="https://i.imgur.com/fcqTtzV.png">  <b class="hny-txt" style="font-size: 26px;">Share on Whatsapp</b>  <img width="25px" height="25px" src="https://i.imgur.com/fcqTtzV.png"></a>');
                     }
